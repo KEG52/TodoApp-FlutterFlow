@@ -208,7 +208,7 @@ class _LoginWidgetState extends State<LoginWidget>
                                                           .labelLarge
                                                           .fontStyle,
                                                 ),
-                                            hintText: 'Email...',
+                                            hintText: 'Emai',
                                             hintStyle:
                                                 FlutterFlowTheme.of(context)
                                                     .labelMedium
