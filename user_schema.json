@@ -1,0 +1,51 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.com/schemas/user.schema.json",
+  "title": "User",
+  "description": "Schema for user documents in Firestore",
+  "type": "object",
+  "properties": {
+    "birthdate": {
+      "description": "The user's birthdate (Firestore timestamp serialized as ISO 8601).",
+      "type": "string",
+      "format": "date-time"
+    },
+    "created_time": {
+      "description": "The time when the user record was created (Firestore timestamp serialized as ISO 8601).",
+      "type": "string",
+      "format": "date-time"
+    },
+    "display_name": {
+      "description": "The user's display name.",
+      "type": "string",
+      "minLength": 1
+    },
+    "email": {
+      "description": "The user's email address.",
+      "type": "string",
+      "format": "email"
+    },
+    "photo_url": {
+      "description": "URL of the user's profile photo.",
+      "type": "string",
+      "format": "uri"
+    },
+    "uid": {
+      "description": "The user's unique identifier (Auth UID).",
+      "type": "string",
+      "minLength": 1
+    }
+  },
+  "required": ["created_time", "display_name", "email", "uid"],
+  "additionalProperties": false,
+  "examples": [
+    {
+      "birthdate": "2003-05-02T00:00:00-04:00",
+      "created_time": "2024-06-17T05:55:17-04:00",
+      "display_name": "Casey",
+      "email": "casey@mail.com",
+      "photo_url": "https://firebasestorage.googleapis.com/v0/wyz",
+      "uid": "5QJ30SbaohTD45Zb3DuijTbmKIxx"
+    }
+  ]
+}
