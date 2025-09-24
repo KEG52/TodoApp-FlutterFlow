@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.com/schemas/task.schema.json",
+  "title": "Task",
+  "description": "Schema for task documents in Firestore",
+  "type": "object",
+  "properties": {
+    "completed": {
+      "description": "Whether the task has been completed.",
+      "type": "boolean"
+    },
+    "created": {
+      "description": "Creation time of the task (Firestore timestamp serialized as ISO 8601).",
+      "type": "string",
+      "format": "date-time"
+    },
+    "details": {
+      "description": "Detailed description of the task.",
+      "type": "string"
+    },
+    "title": {
+      "description": "Short title for the task.",
+      "type": "string",
+      "minLength": 1
+    },
+    "user": {
+      "description": "Reference path to the user document who owns/created the task.",
+      "type": "string",
+      "pattern": "^/users/[A-Za-z0-9_-]{1,128}$"
+    }
+  },
+  "required": ["completed", "created", "title", "user"],
+  "additionalProperties": false,
+  "examples": [
+    {
+      "completed": true,
+      "created": "2024-06-19T10:05:53-04:00",
+      "details": "We are testing add task, but still have more to go.",
+      "title": "Finish This App",
+      "user": "/users/DJEwXBO3dxfbPVHpfl6ZmqWpkJxx"
+    }
+  ]
+}
